@@ -1,3 +1,7 @@
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.Properties;
+
 public class Main {
     public static void main(String[] args) {
         for (String arg : args){
@@ -25,12 +29,14 @@ public class Main {
         }
     }
     public static void usage(){
-
     }
     public static void CPU(){
-
+        System.out.println();
     }
     public static void mem(){
+        System.out.println("Free Memory:     " + NumberFormat.getNumberInstance(Locale.US).format(Runtime.getRuntime().freeMemory()));
+        System.out.println("Total Memory:    " + NumberFormat.getNumberInstance(Locale.US).format(Runtime.getRuntime().totalMemory()));
+        System.out.println("Total Memory:    " + NumberFormat.getNumberInstance(Locale.US).format(Runtime.getRuntime().maxMemory()));
 
     }
     public static void dirs(){
